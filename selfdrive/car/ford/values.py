@@ -49,6 +49,7 @@ class CAR:
   EXPLORER_MK6 = "FORD EXPLORER 6TH GEN"
   FOCUS_MK4 = "FORD FOCUS 4TH GEN"
   MAVERICK_MK1 = "FORD MAVERICK 1ST GEN"
+  F150_MK14 = "FORD F150 14TH GEN"
 
 
 CANFD_CARS: Set[str] = set()
@@ -86,6 +87,7 @@ CAR_INFO: Dict[str, Union[CarInfo, List[CarInfo]]] = {
   ],
   CAR.FOCUS_MK4: FordCarInfo("Ford Focus EU 2018", "Adaptive Cruise Control with Lane Centering"),
   CAR.MAVERICK_MK1: FordCarInfo("Ford Maverick 2022-23", "Co-Pilot360 Assist"),
+  CAR.F150_MK14: FordCarInfo("Ford F150 2023", "Co-Pilot360 Assist"),
 }
 
 FW_QUERY_CONFIG = FwQueryConfig(
@@ -236,6 +238,11 @@ FW_VERSIONS = {
     ],
     (Ecu.shiftByWire, 0x732, None): [
       b'NZ6P-14G395-AD\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00',
+    ],
+  },
+  CAR.F150_MK14: {
+    (Ecu.engine, 0x7E0, None): [
+      b'PL3A-14C204-BRB\x00\x00\x00\x00\x00\x00\x00\x00\x00',
     ],
   },
 }
