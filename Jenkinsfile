@@ -36,7 +36,7 @@ END"""
 }
 
 def phone_steps(String device_type, steps) {
-  return
+  sh "echo all done"
 }
 
 pipeline {
