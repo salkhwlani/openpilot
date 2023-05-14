@@ -187,6 +187,7 @@ def create_acc_ui_msg(packer, CP, main_on: bool, enabled: bool, standstill: bool
   if CP.openpilotLongitudinalControl:
     values.update({
       "AccStopStat_D_Dsply": 2 if standstill else 0,              # Stopping status text
+      "AccMsgTxt_D2_Rq": 0,                                       # ACC text
       "AccTGap_B_Dsply": 0,                                       # Show time gap control UI
       "AccFllwMde_B_Dsply": 1 if hud_control.leadVisible else 0,  # Lead indicator
       "AccStopMde_B_Dsply": 1 if standstill else 0,
